@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Conseil & Formation | Coaching et Formation Professionnelle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://fakeimg.pl/1920x1080');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .path-btn {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .path-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .navbar {
+            transition: background-color 0.3s ease;
+        }
+        
+        .testimonial-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .service-card:hover .card-icon {
+            transform: scale(1.1);
+            color: #8b5cf6;
+        }
+        
+        .card-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #8b5cf6;
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 100%;
+            top: 0;
+            left: -20px;
+            transform: skewX(-30deg);
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .btn-primary:hover:after {
+            width: 140%;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+    <meta name="description" content="NC Conseil & Formation vous accompagne à travers du coaching individuel, de la formation professionnelle et du consulting stratégique. Transformez la timidité, le stress et le manque de confiance en véritables forces. Bénéficiez d’un accompagnement sur-mesure, que vous soyez particulier ou entreprise, pour révéler votre potentiel.">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full z-50 px-4 sm:px-6 lg:px-8 py-3 transition-all duration-300 bg-white bg-opacity-95 shadow-md">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">NC</span>
+                        <span class="ml-3 text-xl font-semibold text-gray-800">NC Conseil &amp; Formation</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex md:items-center space-x-8">
+                    <a href="#" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Accueil</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">À propos</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Services</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                    <a href="#" class="btn-primary px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium hover:shadow-lg">Prendre RDV</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden pt-4 pb-2">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition duration-300">Accueil</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition duration-300">À propos</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition duration-300">Services</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium px-2 py-2 rounded-md hover:bg-gray-50 transition duration-300">Contact</a>
+                    <a href="#" class="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-medium text-center">Prendre RDV</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white px-4 py-20">
+        <div class="container mx-auto">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="mb-6 inline-block p-3 bg-white bg-opacity-10 rounded-xl backdrop-blur-sm">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                        Transformez la <span class="gradient-text">peur</span> en <span class="gradient-text">puissance</span>,<br>
+                        la <span class="gradient-text">tension</span> en <span class="gradient-text">confiance</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl mb-10 text-gray-100">
+                        Un accompagnement sur mesure pour révéler votre potentiel et développer vos compétences
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-purple-600/30 rounded-2xl blur-xl"></div>
+                    <div class="relative z-10 bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-2xl shadow-2xl border border-white border-opacity-20">
+                        <h2 class="text-xl md:text-2xl font-semibold mb-6">Qui êtes-vous ?</h2>
+                        <div class="flex flex-col md:flex-row gap-6 justify-center">
+                            <a href="#particuliers" class="path-btn flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-6 rounded-xl shadow-lg">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-user text-4xl mb-4"></i>
+                                    <h3 class="text-xl font-bold mb-2">Je suis un particulier</h3>
+                                    <p class="text-sm text-gray-100 mb-4">Coaching confiance en soi, gestion du stress, émotions...</p>
+                                    <span class="mt-2 inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm">Découvrir <i class="fas fa-arrow-right ml-1"></i></span>
+                                </div>
+                            </a>
+                            
+                            <a href="#professionnels" class="path-btn flex-1 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white p-6 rounded-xl shadow-lg">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-briefcase text-4xl mb-4"></i>
+                                    <h3 class="text-xl font-bold mb-2">Je suis un professionnel</h3>
+                                    <p class="text-sm text-gray-100 mb-4">Formations en entreprise, coaching managérial, communication...</p>
+                                    <span class="mt-2 inline-block px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm">Découvrir <i class="fas fa-arrow-right ml-1"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 animate-bounce">
+                    <a href="#about" class="inline-block text-white">
+                        <span class="sr-only">Défiler vers le bas</span>
+                        <i class="fas fa-chevron-down text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 px-4">
+        <div class="container mx-auto">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                        <span class="relative z-10">Qui suis-je</span>
+                        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"></span>
+                    </h2>
+                </div>
+                
+                <div class="flex flex-col md:flex-row items-center gap-10 fade-in">
+                    <div class="md:w-2/5 relative">
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 blur-lg opacity-20 transform -rotate-6"></div>
+                        <div class="relative">
+                            <img src="https://fakeimg.pl/600x800" alt="Nicolas Courivaud" class="rounded-2xl shadow-xl h-auto max-w-full">
+                            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                                <p class="font-bold text-gray-800">15+ années d'expérience</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-3/5">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Nicolas Courivaud</h3>
+                        <h4 class="text-xl text-blue-600 mb-6">Fondateur &amp; Coach professionnel</h4>
+                        
+                        <div class="prose prose-lg max-w-none text-gray-600">
+                            <p class="mb-4">
+                                Ancien timide chronique, j'ai transformé mes propres défis en force. Cette expérience personnelle m'a conduit à ma vocation : accompagner les autres dans leur propre transformation.
+                            </p>
+                            <p class="mb-4">
+                                Depuis plus de 15 ans, j'accompagne des individus et des entreprises dans leur développement personnel et professionnel. Ma méthode combine des techniques éprouvées de développement personnel, de psychologie positive et de communication.
+                            </p>
+                            <p class="mb-4">
+                                Je crois profondément que chaque personne possède en elle les ressources nécessaires pour surmonter ses obstacles. Mon rôle est simplement de vous aider à les découvrir et à les activer.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <div class="flex items-center px-4 py-2 bg-blue-50 rounded-full">
+                                <i class="fas fa-certificate text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Coach certifié</span>
+                            </div>
+                            <div class="flex items-center px-4 py-2 bg-blue-50 rounded-full">
+                                <i class="fas fa-brain text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">PNL Praticien</span>
+                            </div>
+                            <div class="flex items-center px-4 py-2 bg-blue-50 rounded-full">
+                                <i class="fas fa-university text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Formateur agréé</span>
+                            </div>
+                            <div class="flex items-center px-4 py-2 bg-blue-50 rounded-full">
+                                <i class="fas fa-comments text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Communication non-violente</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <a href="#contact" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition duration-300">
+                                <span>Prendre contact</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Nos offres</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Deux parcours adaptés à vos besoins</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    Que vous soyez un particulier cherchant à développer votre potentiel personnel ou une entreprise souhaitant améliorer les compétences de vos équipes, nous avons l'accompagnement qu'il vous faut.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Particuliers -->
+                <div id="particuliers" class="service-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-r from-blue-400 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-white text-center z-10">
+                                <i class="fas fa-user-circle card-icon text-6xl mb-2"></i>
+                                <h3 class="text-2xl font-bold">Pour les particuliers</h3>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-500 opacity-20">
+                            <div class="w-full h-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <p class="text-gray-600 mb-4">
+                                Un accompagnement personnalisé pour dépasser vos limites, gérer vos émotions et développer votre confiance en vous.
+                            </p>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Coaching confiance en soi</strong> - Développez une image positive et authentique de vous-même</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Gestion du stress</strong> - Techniques efficaces pour transformer le stress en énergie positive</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Dépassement de la timidité</strong> - Outils pratiques pour vous exprimer avec aisance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Gestion émotionnelle</strong> - Apprenez à comprendre et maîtriser vos émotions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Affirmation de soi</strong> - Développez votre capacité à vous affirmer avec respect</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Comment ça marche ?</h4>
+                            <ol class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm mr-3">1</span>
+                                    <span>Consultation initiale gratuite pour définir vos objectifs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm mr-3">2</span>
+                                    <span>Programme personnalisé adapté à vos besoins</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm mr-3">3</span>
+                                    <span>Séances individuelles en présentiel ou à distance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm mr-3">4</span>
+                                    <span>Suivi et accompagnement entre les séances</span>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <a href="#" class="inline-block w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center rounded-lg font-medium hover:shadow-lg transition duration-300">
+                            Découvrir les programmes particuliers
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Professionnels -->
+                <div id="professionnels" class="service-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-40 bg-gradient-to-r from-purple-400 to-purple-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-white text-center z-10">
+                                <i class="fas fa-building card-icon text-6xl mb-2"></i>
+                                <h3 class="text-2xl font-bold">Pour les professionnels</h3>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-purple-500 opacity-20">
+                            <div class="w-full h-full" style="background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <p class="text-gray-600 mb-4">
+                                Des formations et du coaching pour développer les compétences de vos équipes et améliorer la performance collective.
+                            </p>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Coaching managérial</strong> - Développez vos compétences de leadership et d'encadrement</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Communication efficace</strong> - Améliorez les échanges au sein de l'entreprise</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Prévention du stress</strong> - Outils et méthodes pour un environnement de travail serein</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Cohésion d'équipe</strong> - Renforcez les liens et la collaboration entre collaborateurs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700"><strong>Gestion des conflits</strong> - Techniques de médiation et de résolution de tensions</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-5 rounded-lg mb-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">Nos formats d'intervention</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-calendar-alt text-purple-500 mr-3"></i>
+                                    <span>Formations sur mesure d'une journée à plusieurs jours</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-users text-purple-500 mr-3"></i>
+                                    <span>Ateliers pratiques en petits groupes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-user-tie text-purple-500 mr-3"></i>
+                                    <span>Coaching individuel pour les managers</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-video text-purple-500 mr-3"></i>
+                                    <span>Sessions à distance ou en présentiel</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <a href="#" class="inline-block w-full py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-center rounded-lg font-medium hover:shadow-lg transition duration-300">
+                            Découvrir les formations entreprise
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-gray-600 mb-6 max-w-3xl mx-auto">
+                    Tous nos programmes sont personnalisables selon vos besoins spécifiques. Contactez-nous pour discuter de votre projet et obtenir un devis sur mesure.
+                </p>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span>Demander un devis personnalisé</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Notre approche</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Une méthodologie éprouvée</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    Notre accompagnement repose sur des techniques scientifiquement validées et une approche personnalisée pour des résultats durables.
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 fade-in">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-brain text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Approche cognitive</h3>
+                        <p class="text-gray-600">
+                            Identification et transformation des schémas de pensée limitants pour développer un état d'esprit positif et constructif.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 fade-in">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-heartbeat text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Intelligence émotionnelle</h3>
+                        <p class="text-gray-600">
+                            Développement de la conscience et de la gestion émotionnelle pour une meilleure régulation du stress et des interactions sociales.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 fade-in">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-comments text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Communication efficace</h3>
+                        <p class="text-gray-600">
+                            Techniques de communication assertive pour exprimer vos besoins, établir des limites saines et développer des relations harmonieuses.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg fade-in">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Notre processus en 4 étapes</h3>
+                    
+                    <div class="relative">
+                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-600 transform -translate-x-1/2"></div>
+                        
+                        <div class="space-y-12">
+                            <div class="relative flex flex-col md:flex-row">
+                                <div class="md:w-1/2 md:pr-12 md:text-right">
+                                    <h4 class="text-xl font-bold text-blue-600 mb-2">1. Diagnostic</h4>
+                                    <p class="text-gray-600">
+                                        Identification précise de vos besoins, objectifs et des obstacles qui vous empêchent d'atteindre votre plein potentiel.
+                                    </p>
+                                </div>
+                                <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 rounded-full bg-blue-500 transform -translate-x-1/2 flex items-center justify-center">
+    <span class="text-white font-bold flex items-center justify-center w-full h-full">1</span>
+</div>
+                                <div class="md:w-1/2 md:pl-12 md:mt-0 mt-4">
+                                    <div class="md:hidden flex items-center mb-2">
+                                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+                                            <span class="text-white font-bold">1</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-blue-600">Diagnostic</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex flex-col md:flex-row">
+                                <div class="md:w-1/2 md:pr-12 md:text-right md:order-1 order-2">
+                                    <div class="md:hidden flex items-center mb-2">
+                                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center mr-2">
+                                            <span class="text-white font-bold">2</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-blue-600">Plan d'action</h4>
+                                    </div>
+                                </div>
+                                <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 rounded-full bg-blue-600 transform -translate-x-1/2 flex items-center justify-center">
+                                    <span class="text-white font-bold">2</span>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 md:order-2 order-1">
+                                    <h4 class="text-xl font-bold text-blue-600 mb-2">2. Plan d'action</h4>
+                                    <p class="text-gray-600">
+                                        Élaboration d'une stratégie personnalisée avec des objectifs clairs, mesurables et des étapes concrètes pour y parvenir.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex flex-col md:flex-row">
+                                <div class="md:w-1/2 md:pr-12 md:text-right">
+                                    <h4 class="text-xl font-bold text-purple-600 mb-2">3. Accompagnement</h4>
+                                    <p class="text-gray-600">
+                                        Mise en œuvre du plan avec un soutien constant, des outils pratiques et des ajustements selon vos progrès et besoins.
+                                    </p>
+                                </div>
+                                <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 rounded-full bg-purple-500 transform -translate-x-1/2 flex items-center justify-center">
+                                    <span class="text-white font-bold">3</span>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 md:mt-0 mt-4">
+                                    <div class="md:hidden flex items-center mb-2">
+                                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center mr-2">
+                                            <span class="text-white font-bold">3</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-purple-600">Accompagnement</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex flex-col md:flex-row">
+                                <div class="md:w-1/2 md:pr-12 md:text-right md:order-1 order-2">
+                                    <div class="md:hidden flex items-center mb-2">
+                                        <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center mr-2">
+                                            <span class="text-white font-bold">4</span>
+                                        </div>
+                                        <h4 class="text-xl font-bold text-purple-600">Autonomisation</h4>
+                                    </div>
+                                </div>
+                                <div class="hidden md:block absolute left-1/2 top-0 w-8 h-8 rounded-full bg-purple-600 transform -translate-x-1/2 flex items-center justify-center">
+                                    <span class="text-white font-bold">4</span>
+                                </div>
+                                <div class="md:w-1/2 md:pl-12 md:order-2 order-1">
+                                    <h4 class="text-xl font-bold text-purple-600 mb-2">4. Autonomisation</h4>
+                                    <p class="text-gray-600">
+                                        Développement de votre autonomie pour maintenir et continuer vos progrès sur le long terme après l'accompagnement.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Témoignages</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Ce qu'en disent nos clients</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    Découvrez les expériences et les transformations vécues par ceux qui ont suivi nos programmes.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Témoignage 1 -->
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="https://fakeimg.pl/200x200" alt="Sophie L." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Sophie L.</h4>
+                                <p class="text-sm text-gray-500">Cadre en entreprise</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">
+                            "Après des années de stress et d'anxiété lors de mes prises de parole en public, le coaching avec Nicolas a été une révélation. J'ai appris à transformer mon stress en énergie positive et à m'exprimer avec confiance. Aujourd'hui, je prends la parole en réunion sans appréhension et j'ai même animé un séminaire devant 100 personnes !"
+                        </p>
+                        
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Témoignage 2 -->
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="https://fakeimg.pl/200x200" alt="Thomas M." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Thomas M.</h4>
+                                <p class="text-sm text-gray-500">Entrepreneur</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">
+                            "Lorsque j'ai créé mon entreprise, je me sentais dépassé par les responsabilités et les interactions sociales nécessaires. Le programme de coaching m'a aidé à développer ma confiance en moi et mes compétences en leadership. Non seulement mon entreprise prospère maintenant, mais je prends plaisir à rencontrer de nouveaux clients et partenaires."
+                        </p>
+                        
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Témoignage 3 -->
+                    <div class="testimonial-card bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                <img src="https://fakeimg.pl/200x200" alt="Emilie D." class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Emilie D.</h4>
+                                <p class="text-sm text-gray-500">DRH en entreprise</p>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">
+                            "Nous avons fait appel à NC Conseil &amp; Formation pour une série d'ateliers sur la cohésion d'équipe et la communication. Les résultats ont été impressionnants : réduction des conflits, amélioration de la collaboration et de l'ambiance générale. Nicolas a su s'adapter parfaitement à notre contexte et proposer des outils concrets que l'équipe utilise encore aujourd'hui."
+                        </p>
+                        
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-full font-medium hover:bg-blue-50 transition duration-300">
+                        <span>Voir plus de témoignages</span>
+                        <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Questions fréquentes</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Vous avez des questions ?</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    Retrouvez ci-dessous les réponses aux questions les plus fréquemment posées sur nos services.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                        <button class="faq-question w-full px-6 py-4 text-left font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                            <span>Combien de séances sont nécessaires pour voir des résultats ?</span>
+                            <i class="fas fa-plus text-blue-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 text-gray-600 border-t border-gray-100 hidden">
+                            <p>
+                                Le nombre de séances varie selon les objectifs et la situation de chaque personne. Généralement, des changements significatifs commencent à apparaître après 3 à 5 séances. Pour un accompagnement complet, un programme de 8 à 12 séances est souvent recommandé. Lors de notre première rencontre, nous établirons ensemble un plan personnalisé adapté à vos besoins spécifiques.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                        <button class="faq-question w-full px-6 py-4 text-left font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                            <span>Comment se déroule une séance de coaching ?</span>
+                            <i class="fas fa-plus text-blue-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 text-gray-600 border-t border-gray-100 hidden">
+                            <p>
+                                Une séance de coaching dure généralement entre 1h et 1h30. Elle commence par un point sur vos avancées depuis la dernière séance, suivi d'un travail approfondi sur vos objectifs actuels. Nous utilisons diverses techniques (exercices pratiques, visualisation, jeux de rôle...) adaptées à vos besoins. Chaque séance se termine par la définition d'actions concrètes à mettre en place avant notre prochaine rencontre.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                        <button class="faq-question w-full px-6 py-4 text-left font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                            <span>Proposez-vous des séances à distance ?</span>
+                            <i class="fas fa-plus text-blue-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 text-gray-600 border-t border-gray-100 hidden">
+                            <p>
+                                Oui, nous proposons des séances de coaching et certaines formations en visioconférence via Zoom ou Teams. L'efficacité est comparable aux séances en présentiel, avec l'avantage de la flexibilité géographique. Cela vous permet de bénéficier de notre accompagnement quel que soit votre lieu de résidence ou vos contraintes de déplacement.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                        <button class="faq-question w-full px-6 py-4 text-left font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                            <span>Quels sont vos tarifs ?</span>
+                            <i class="fas fa-plus text-blue-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 text-gray-600 border-t border-gray-100 hidden">
+                            <p>
+                                Nos tarifs varient selon le type d'accompagnement :
+                            </p>
+                            <ul class="list-disc pl-5 mt-2 space-y-1">
+                                <li>Séance de coaching individuel : à partir de 80€/séance</li>
+                                <li>Programmes complets (pack de séances) : à partir de 560€</li>
+                                <li>Formations en entreprise : sur devis, selon la durée et le nombre de participants</li>
+                            </ul>
+                            <p class="mt-2">
+                                La première consultation de 30 minutes est offerte pour faire connaissance et définir vos besoins.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in">
+                        <button class="faq-question w-full px-6 py-4 text-left font-semibold text-gray-800 focus:outline-none flex justify-between items-center">
+                            <span>Les formations en entreprise sont-elles éligibles au financement par les OPCO ?</span>
+                            <i class="fas fa-plus text-blue-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer px-6 py-4 text-gray-600 border-t border-gray-100 hidden">
+                            <p>
+                                Oui, nos formations professionnelles sont éligibles aux financements par les OPCO (Opérateurs de Compétences). Nous sommes un organisme de formation enregistré et certifié Qualiopi, ce qui vous permet de bénéficier d'une prise en charge partielle ou totale des coûts de formation selon votre situation. Nous vous accompagnons dans les démarches administratives pour faciliter votre demande de financement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600 mb-4">Vous avez d'autres questions ?</p>
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition duration-300">
+                        <i class="fas fa-question-circle mr-2"></i>
+                        <span>Contactez-nous</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Contact</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Prenons contact</h2>
+                <p class="max-w-3xl mx-auto text-gray-600">
+                    Vous souhaitez en savoir plus sur nos services ou prendre rendez-vous pour une première consultation gratuite ? N'hésitez pas à nous contacter.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-10">
+                    <!-- Informations de contact -->
+                    <div class="md:w-2/5">
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-md h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Nos coordonnées</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold text-gray-800 mb-1">Adresse</h4>
+                                        <p class="text-gray-600">
+                                            12 rue des Lilas<br>
+                                            75009 Paris, France
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone-alt text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold text-gray-800 mb-1">Téléphone</h4>
+                                        <p class="text-gray-600">
+                                            <a href="tel:+33123456789" class="hover:text-blue-600 transition duration-300">+33 1 23 45 67 89</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                                        <p class="text-gray-600">
+                                            <a href="mailto:contact@nc-formation.fr" class="hover:text-blue-600 transition duration-300">contact@nc-formation.fr</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-blue-600"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-semibold text-gray-800 mb-1">Horaires</h4>
+                                        <p class="text-gray-600">
+                                            Du lundi au vendredi<br>
+                                            9h00 - 19h00
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-semibold text-gray-800 mb-4">Suivez-nous</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="social-icon w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-100">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="social-icon w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-100">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="social-icon w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-100">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-icon w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-100">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulaire de contact -->
+                    <div class="md:w-3/5">
+                        <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">Envoyez-nous un message</h3>
+                            
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Votre nom">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Votre email">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Votre numéro de téléphone">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                                    <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                        <option value="" selected="" disabled="">Sélectionnez un sujet</option>
+                                        <option value="coaching">Coaching individuel</option>
+                                        <option value="formation">Formation en entreprise</option>
+                                        <option value="info">Demande d'information</option>
+                                        <option value="autre">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300" placeholder="Votre message"></textarea>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="consent" name="consent" class="mt-1 mr-2">
+                                    <label for="consent" class="text-sm text-gray-600">
+                                        J'accepte que mes données soient traitées conformément à la politique de confidentialité.
+                                    </label>
+                                </div>
+                                
+                                <div>
+                                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transition duration-300">
+                                        Envoyer le message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <!-- Logo et description -->
+                    <div class="md:col-span-1">
+                        <div class="flex items-center mb-4">
+                            <span class="h-10 w-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">NC</span>
+                            <span class="ml-3 text-xl font-semibold">NC Conseil &amp; Formation</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Transformez la peur en puissance, la tension en confiance grâce à un accompagnement personnalisé.
+                        </p>
+                    </div>
+                    
+                    <!-- Liens rapides -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Liens rapides</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">À propos</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Services -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Nos services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#particuliers" class="text-gray-400 hover:text-white transition duration-300">Coaching individuel</a></li>
+                            <li><a href="#professionnels" class="text-gray-400 hover:text-white transition duration-300">Formation entreprise</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Ateliers collectifs</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Conférences</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Recevez nos conseils et actualités directement dans votre boîte mail.
+                        </p>
+                        <form class="flex">
+                            <input type="email" placeholder="Votre email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800">
+                            <button type="submit" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 rounded-r-lg">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <hr class="border-gray-800 my-8">
+                
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 NC Conseil &amp; Formation. Tous droits réservés.
+                    </p>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Mentions légales</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">Politique de confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">CGV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center shadow-lg transform transition-transform duration-300 opacity-0 translate-y-10">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                    icon.style.transform = 'rotate(135deg)';
+                }
+            });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const backToTop = document.getElementById('back-to-top');
+        
+        function checkScroll() {
+            // Fade-in elements
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+            
+            // Back to top button
+            if (window.scrollY > 500) {
+                backToTop.style.opacity = '1';
+                backToTop.style.transform = 'translateY(0)';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.transform = 'translateY(10px)';
+            }
+            
+            // Navbar background
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md');
+                navbar.classList.remove('bg-opacity-95');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-opacity-95');
+            }
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+        
+        // Back to top button click
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
